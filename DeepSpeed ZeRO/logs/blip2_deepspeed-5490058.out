@@ -1,0 +1,36 @@
+[Dataset] Loaded 1960 samples from /pscratch/sd/r/rs2531/Course_Project/roco_caption/data/train.jsonl
+[Dataset] Loaded 40 samples from /pscratch/sd/r/rs2531/Course_Project/roco_caption/data/val.jsonl
+
+[deepspeed] Launching training with DeepSpeed
+[deepspeed] Config summary: fp16=True, zero_stage=3, overlap_comm=True, contiguous_gradients=True
+[deepspeed] Checkpoint directory: /pscratch/sd/r/rs2531/Course_Project/DeepSpeed/checkpoints
+[deepspeed] Saved run metadata to /pscratch/sd/r/rs2531/Course_Project/DeepSpeed/checkpoints/run_meta.json
+
+[Engine initialized on host=nid002956 | rank=0/8 | local_rank=0 | device_index=0 | MASTER_ADDR=128.55.66.116:29500 | CUDA_VISIBLE_DEVICES=0,1,2,3]
+[Engine] world_size=8, local_world_size=4 (per node)
+
+[Training] num_train_batches_per_rank=245, num_training_steps=980
+[rank0] Loading BLIP-2 model from /pscratch/sd/r/rs2531/Course_Project/hf_cache/blip2-flan-t5-xl (deferred init + ZeRO-3)
+
+========== Epoch 0 ==========
+[Epoch 0 Step 0/980] Loss (global avg): 1.3682
+[Epoch 0 Step 50/980] Loss (global avg): 0.7541
+[Epoch 0 Step 100/980] Loss (global avg): 0.5423
+[Epoch 0 Step 200/980] Loss (global avg): 0.3920
+[Epoch 0 End] train_loss=1.3682, val_loss=0.0333, epoch_time=143.01s, samples_per_sec_global=13.7052, peak_mem_per_rank=27.70 GB
+
+========== Epoch 1 ==========
+[Epoch 1 Step 0/980] Loss (global avg): 0.1773
+[Epoch 1 End] train_loss=0.0774, val_loss=0.0425, epoch_time=135.81s, samples_per_sec_global=14.4317, peak_mem_per_rank=27.70 GB
+
+========== Epoch 2 ==========
+[Epoch 2 End] train_loss=0.0561, val_loss=0.0989, epoch_time=136.58s, samples_per_sec_global=14.3504, peak_mem_per_rank=27.70 GB
+
+========== Epoch 3 ==========
+[Epoch 3 End] train_loss=0.0463, val_loss=0.0770, epoch_time=136.09s, samples_per_sec_global=14.4023, peak_mem_per_rank=27.70 GB
+
+========== Epoch 4 ==========
+[Epoch 4 End] train_loss=0.0373, val_loss=0.0098, epoch_time=137.15s, samples_per_sec_global=14.2911, peak_mem_per_rank=27.70 GB
+
+[deepspeed] Training complete. Final checkpoint saved to /pscratch/sd/r/rs2531/Course_Project/DeepSpeed/checkpoints
+[deepspeed] Wall clock breakdown disabled.
