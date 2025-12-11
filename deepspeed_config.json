@@ -1,0 +1,37 @@
+{
+  "model_name_or_path": "/path/to/blip2-model",
+  "data_root": "/path/to/roco/data",
+  "train_jsonl": "train.jsonl",
+  "val_jsonl": "val.jsonl",
+  "output_dir": "./deepspeed_checkpoints",
+
+  "num_epochs": 5,
+  "train_batch_size": 1,
+  "eval_batch_size": 1,
+  "learning_rate": 1e-5,
+  "weight_decay": 0.01,
+  "warmup_steps": 0,
+  "max_text_len": 64,
+  "num_workers": 4,
+  "seed": 42,
+  "log_every": 10,
+  "save_every": 0,
+  "grad_clip": 1.0,
+
+  "deepspeed": {
+    "fp16": {
+      "enabled": true
+    },
+    "zero_optimization": {
+      "stage": 3,
+      "overlap_comm": true,
+      "contiguous_gradients": true,
+      "reduce_scatter": true,
+      "allgather_partitions": true,
+      "allgather_bucket_size": 200000000,
+      "reduce_bucket_size": 200000000
+    },
+    "train_batch_size": 1,
+    "gradient_accumulation_steps": 1
+  }
+}
