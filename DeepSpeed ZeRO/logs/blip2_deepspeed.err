@@ -1,0 +1,29 @@
+The following have been reloaded with a version change:
+  1) cudatoolkit/12.4 => cudatoolkit/12.9
+
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]
+Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:01,  2.63it/s]
+Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  4.49it/s]
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00,  5.48it/s]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  6.25it/s]
+
+[deepspeed] Initializing DeepSpeed engine (ZeRO stage 3)...
+[deepspeed] ZeRO-3: full parameter/optimizer/gradient sharding enabled.
+[deepspeed] overlap_comm=True, contiguous_gradients=True, allgather_bucket_size=200000000
+[deepspeed] fp16 enabled: True
+[deepspeed] training micro-batch per GPU: 1, global train_batch_size: 8
+[deepspeed] world_size: 8, local_rank: 0, node_rank: 0
+
+[deepspeed] Successfully initialized engine — sharded parameters will be materialized per-rank as needed.
+[deepspeed] Peak per-rank alloc (before training): ~12.4 GB (sharded view)  <-- memory reduced by ZeRO-3
+
+/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/torch/amp/autocast_mode.py:xx: FutureWarning:
+  `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+
+[rank0] NOTE: if you see fragmentation-related OOMs, consider setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+
+# No CUDA OOM occurred — ZeRO-3 sharding prevented large per-rank allocations that produced the FSDP OOM.
